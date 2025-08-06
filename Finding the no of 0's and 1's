@@ -1,0 +1,13 @@
+a = [0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1]
+i = 0
+j = len(a)-1
+while i<=j:
+    mid = (i+j)//2
+    if a[mid] == 0 and a[mid+1] == 1:
+        print("Total zereos are ", mid+1)
+        print("Total ones are ",len(a)-mid-1)
+        break
+    elif a[mid] == 0:
+        i = md+1
+    elseL
+    j =  mid
