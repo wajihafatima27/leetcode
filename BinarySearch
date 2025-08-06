@@ -1,3 +1,4 @@
+Basic Code
 a = [14,17,90,122,15,19,21,33,36,41]
 key = 36
 falg = False 
@@ -9,3 +10,19 @@ if flag == True:
     print("found")
 else:
     print("not found")
+___________________________________________________
+leetcode
+
+class Solution:
+    def search(self, nums: List[int], target: int) -> int:
+        i = 0
+        j = len(nums)-1
+        while i<=j:
+            mid = (i+j)//2
+            if nums[mid] == target:
+                return mid
+            elif nums[mid]>target:
+                j = mid-1
+            else:
+                i = mid+1
+        return -1
