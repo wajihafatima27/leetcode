@@ -1,0 +1,11 @@
+a = [14,17,90,122,15,19,21,33,36,41]
+key = 36
+falg = False 
+for i in a:
+    if i == key:
+        flag = True
+        break
+if flag == True:
+    print("found")
+else:
+    print("not found")
