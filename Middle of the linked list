@@ -11,4 +11,14 @@ class Solution:
            temp = temp.next
            i=i+1
         return temp
-        
+________________________________________________________
+With reduced time complexity---O(n/2)
+
+class Solution:
+    def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        fast = head
+        slow = head
+        while fast != None and fast.next !=None:
+            fast = fast.next.next
+            slow = slow.next
+        return slow
