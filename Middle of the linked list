@@ -12,6 +12,7 @@ class Solution:
            i=i+1
         return temp
 ________________________________________________________
+
 With reduced time complexity---O(n/2)
 
 class Solution:
