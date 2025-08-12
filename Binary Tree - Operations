@@ -1,0 +1,71 @@
+class TreeNode:
+    def __init__(self,a):
+        self.val=a
+        self.left=None
+        self.right=None
+def maxBST(root):
+    temp=root
+    while temp.right!=None:
+        temp=temp.right
+    return temp.val
+def minBST(root):
+    temp=root
+    while temp.left!=None:
+        temp=temp.left
+    return temp.val
+
+def countNodes(root):
+    if root==None:
+        return 0
+    else:
+        return 1+countNodes(root.left)+countNodes(root.right)
+def sumNodes(root):
+    if root==None:
+        return 0
+    else:
+        return root.val+sumNodes(root.left) + sumNodes(root.right)
+def MultiplyNodes(root):
+    if root==None:
+        return 1
+    else:
+        return root.val*MultiplyNodes(root.left)*MultiplyNodes(root.right)
+def countEvenNodes(root):
+    if root==None:
+        return 0
+    else:
+        return int(root.val%2==0)+countEvenNodes(root.left)+countEvenNodes(root.right)
+def SearchNodes(root,key):
+    if root==None:
+        return False
+    else:
+        return (root.val==key) or SearchNodes(root.left,key) or SearchNodes(root.right,key)
+def countLeafNode(root):
+    if root==None:
+        return 0
+    if root.left==None and root.right==None:
+        return 1
+    else:
+        return countLeafNode(root.left)+countLeafNode(root.right)
+def countNonLeafNode(root):
+    if root==None:
+        return 0
+    if root.left==None and root.right==None:
+        return 0
+    else:
+        return 1+countNonLeafNode(root.left)+countNonLeafNode(root.right)
+root=TreeNode(21)
+root.left=TreeNode(6)
+root.right=TreeNode(8)
+root.left.left=TreeNode(2)
+root.left.right=TreeNode(4)
+root.right.right=TreeNode(6)
+root.right.left=TreeNode(5)
+print(countNodes(root))
+print(countLeafNode(root))
+print(countNonLeafNode(root))
+print(sumNodes(root))
+print(MultiplyNodes(root))
+print(countEvenNodes(root))
+print(SearchNodes(root,15))
+print(maxBST(root))
+print(minBST(root))
