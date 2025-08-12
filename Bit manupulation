@@ -1,0 +1,6 @@
+a = 365
+k = 6
+if (a&(1<<(k-1)))!=0:
+   print(k, "th bit is 1")
+else:
+   print(k,"th bit is 0")
